@@ -1,0 +1,51 @@
+# 换行符策略：文本文件入库统一为 LF，避免 Windows/Unix 之间来回改动
+* text=auto eol=lf
+
+# 二进制文件：显式关闭换行符转换与 diff/merge，保证上传下载字节完全一致
+# （若 .ap21 / .zap21 实际是压缩包或二进制工程文件，必须这样声明）
+*.zap21 binary
+*.ap21 binary
+*.zip binary
+*.7z binary
+*.rar binary
+*.gz binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.bmp binary
+*.ico binary
+*.pdf binary
+*.doc binary
+*.docx binary
+*.xls binary
+*.xlsx binary
+*.ppt binary
+*.pptx binary
+*.exe binary
+*.dll binary
+*.so binary
+*.dylib binary
+*.bin binary
+*.dat binary
+
+# 文本文件：显式声明为 LF
+*.md text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.py text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.c text eol=lf
+*.h text eol=lf
+*.cpp text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.sh text eol=lf
+
+# Windows 脚本保持 CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
